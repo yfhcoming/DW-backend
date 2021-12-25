@@ -1,17 +1,15 @@
 package com.dw.controller.mysql;
 
 
+import com.dw.model.mysql.Merge;
 import com.dw.model.mysql.ResultVo;
 import com.dw.service.mysql.MovieService;
+import com.dw.vo.MergeVo;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 @CrossOrigin
 @RestController
@@ -236,5 +234,47 @@ public class movieController {
             result.add(temp1);
         }
         return new ResultVo(result,movieService.gettimeele());
+    }
+
+
+    //查询电影的数据血缘
+    @PostMapping("/find/movie/merge")
+    public ResultVo findMergedMovie(@RequestBody List<String> pids) {
+
+        List<String> s = pids;
+        System.out.println(s);
+        List<MergeVo> mergedMovie = movieService.findMergedMovie(pids);
+
+        List<HashMap<String, String>> result = new ArrayList<>();
+
+        for (MergeVo merge: mergedMovie){
+//            System.out.println(merge.getMerge_pids().getClass().getName().toString());
+            String merge_pids_str = merge.getMerge_pids().replace("[","")
+                    .replace("]","")
+                    .replace(" ","-")
+                    .replace("'","");
+
+            List<String> pidsList = Arrays.asList(merge_pids_str.split("-"));
+            for (String mergedPid : pidsList){
+                HashMap<String, String> item = new HashMap<>();
+                item.put(merge.getP_id(),mergedPid);
+                result.add(item);
+            }
+        }
+
+        return new ResultVo(result,movieService.getTimeMerge());
+//
+//        List<HashMap<String, String>> result = new ArrayList<>();
+//        for(Object item : list){
+//            HashMap<String, String> temp1 = new HashMap<>();
+//            Object[] cells = (Object[]) item;
+//            temp1.put("title", String.valueOf(cells[0]));
+//            temp1.put("director", String.valueOf(cells[1]));
+//            temp1.put("actor", String.valueOf(cells[2]));
+//            temp1.put("score", String.valueOf(cells[3]));
+//            temp1.put("emotion_score", String.valueOf(cells[4]));
+//            temp1.put("label", String.valueOf(cells[5]));
+//            result.add(temp1);
+//        }
     }
 }
