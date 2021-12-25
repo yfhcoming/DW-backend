@@ -25,7 +25,7 @@ public class TimeQuery implements AutoCloseable{
      * ① 按照时间进行查询及统计
      * 粒度：年份
      * 某年的电影数
-     * cmp: 0 相等 1 after -1 before
+     * cmp: 0 equal 1 greater -1 less
      */
     public List<Record> queryTimeByYear(final String year, final String cmp){
         // TODO

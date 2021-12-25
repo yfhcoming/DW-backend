@@ -3,8 +3,10 @@ package com.dw.controller;
 import com.dw.dao.AttrQuery;
 import com.dw.dao.StatisticsQuery;
 import com.dw.dao.TimeQuery;
+import com.dw.framework.ResultVo;
 import com.dw.service.StatisticsService;
 import com.dw.service.QueryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -70,4 +72,7 @@ public class StatisticsController {
     public HashMap<String, Object> getLabelCountInNeo4j(@RequestParam String label) {
         return statisticsService.getCountByType(label, "label");
     }
+
+
+
 }

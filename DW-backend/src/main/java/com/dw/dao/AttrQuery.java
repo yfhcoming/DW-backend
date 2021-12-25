@@ -1,8 +1,10 @@
 package com.dw.dao;
 
 import org.neo4j.driver.*;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import static org.neo4j.driver.Values.parameters;
@@ -142,6 +144,22 @@ public class AttrQuery implements AutoCloseable{
             return ans;
         }
     }
+
+//    public HashMap<String, Object> getReviewListByMovie(@RequestParam String title){
+//        try(Session session = driver.session()){
+//            List<Record> ans = session.readTransaction(new TransactionWork<List<Record>>() {
+//                @Override
+//                public List<Record> execute(Transaction transaction) {
+//                    Result result;
+//                    result=transaction.run("")
+//                    List<Record> resultList = result.list();
+//                    System.out.println(resultList);
+//                    return resultList;
+//                }
+//            });
+//            return ans;
+//        }
+//    }
 
 
     @Override

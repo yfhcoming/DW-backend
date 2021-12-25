@@ -2,7 +2,9 @@ package com.dw.controller;
 
 import com.dw.dao.AttrQuery;
 import com.dw.dao.TimeQuery;
+import com.dw.framework.ResultVo;
 import com.dw.service.QueryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +13,7 @@ import java.util.HashMap;
 @RestController
 @RequestMapping(value = "/query", produces = {MediaType.APPLICATION_JSON_VALUE})
 public class QueryController {
+
 
     final private QueryService queryService = new QueryService(
             new AttrQuery("bolt://localhost:7687", "neo4j", "dw"),

@@ -3,6 +3,7 @@ package com.dw.service;
 import com.dw.dao.AttrQuery;
 import com.dw.dao.TimeQuery;
 import org.neo4j.driver.Record;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -136,4 +137,6 @@ public class QueryService {
         ret.put("count", recordList.get(0).get("count").toString());
         return ret;
     }
+
+//    public HashMap<String, Object> getReviewListByMovie(@RequestParam String title){}
 }
