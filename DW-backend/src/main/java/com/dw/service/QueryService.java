@@ -19,6 +19,32 @@ public class QueryService {
         this.timeQuery = timeQuery;
     }
 
+    public HashMap<String, Object> getMovieByAllAttr(String title,
+                                                     String director,
+                                                     String actor
+                                                     )
+    {
+        List<HashMap<String, String>> ans= new ArrayList<>();
+        List<Record> recordList;
+        long startTime = System.currentTimeMillis();    //获取开始时间
+        recordList = attrQuery.queryByAllAttr(title,director,actor);
+        long endTime = System.currentTimeMillis();    //获取开始时间
+        long time = endTime - startTime;
+
+        for (Record record: recordList) {
+            HashMap<String, String> item = new HashMap<String, String>();
+            item.put("product_id", record.get("product_id").toString());
+            item.put("score", record.get("score").toString());
+            item.put("emotion_score", record.get("emotion_score").toString());
+            item.put("title", record.get("title").toString());
+            ans.add(item);
+        }
+        HashMap<String, Object> ret = new HashMap<String, Object>();
+        ret.put("time", time);
+        ret.put("movieList", ans);
+        return ret;
+    }
+
     public HashMap<String, Object> queryByMovieAttr(String data, String queryType){
 
         List<HashMap<String, String>> ans= new ArrayList<>();
@@ -115,15 +141,18 @@ public class QueryService {
                     season = -1;
                 }
                 startTime = System.currentTimeMillis();
+                System.out.println(dataList);
                 recordList = timeQuery.queryTimeBySeason(dataList.get(0), season.toString(), cmp);
                 break;
             case "month":
                 dataList = Arrays.asList(timeData.split("-"));
+                System.out.println(dataList);
                 startTime = System.currentTimeMillis();
                 recordList = timeQuery.queryTimeByMonth(dataList.get(0), dataList.get(1), cmp);
                 break;
             case "day":
                 dataList = Arrays.asList(timeData.split("-"));
+                System.out.println(dataList);
                 startTime = System.currentTimeMillis();
                 recordList = timeQuery.queryTimeByDay(dataList.get(0), dataList.get(1), dataList.get(2), cmp);
                 break;

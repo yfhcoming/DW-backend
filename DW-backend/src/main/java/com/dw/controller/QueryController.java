@@ -47,6 +47,15 @@ public class QueryController {
     }
 
     @ResponseBody
+    @RequestMapping(value = "/neo4j/all-attr", method = RequestMethod.GET)
+    public HashMap<String, Object> getMovieListByAllAttr(@RequestParam String title,
+                                                         @RequestParam String director,
+                                                         @RequestParam String actor
+                                                         ){
+        return queryService.getMovieByAllAttr(title,director,actor);
+    }
+
+    @ResponseBody
     @RequestMapping(value = "/neo4j/score", method = RequestMethod.GET)
     public HashMap<String, Object> getMovieListByScore(@RequestParam Integer score, @RequestParam String comparison){
         return queryService.queryByMovieScore(score,"score", comparison );

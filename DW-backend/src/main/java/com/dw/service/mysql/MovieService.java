@@ -1,7 +1,10 @@
 package com.dw.service.mysql;
 
 
+import com.dw.dao.mysql.MergeRepository;
 import com.dw.dao.mysql.MovieRepository;
+import com.dw.model.mysql.ResultVo;
+import com.dw.vo.MergeVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +15,10 @@ public class MovieService {
 
     @Autowired
     private MovieRepository movieRepository;
+
+    @Autowired
+    private MergeRepository mergeRepository;
+
     private long time;
     private long timeone=0;
     private long timetwo=0;
@@ -24,6 +31,8 @@ public class MovieService {
     private long timenine=0;
     private long timeten=0;
     private long timeele=0;
+
+    private long timeMerge = 0;
 
     public List getmoviebytitle(String title,double begin,double end) {
         long startTime = System.currentTimeMillis();    //获取开始时间
@@ -144,5 +153,18 @@ public class MovieService {
     public String getIdByTitle(String title){
         String tit = movieRepository.getIdByTitle(title);
         return tit;
+    }
+
+
+    public long getTimeMerge() {
+        return timeMerge;
+    }
+
+    public List findMergedMovie(List<String> pids){
+        long startTime = System.currentTimeMillis();    //获取开始时间
+        List<MergeVo> mergedMovie = mergeRepository.findMergedMovie(pids);
+        long endTime = System.currentTimeMillis();    //获取结束时间
+        this.timeMerge = endTime - startTime;
+        return mergedMovie;
     }
 }

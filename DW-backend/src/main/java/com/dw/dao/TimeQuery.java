@@ -155,7 +155,7 @@ public class TimeQuery implements AutoCloseable{
                     Result result;
                     switch (cmp) {
                         case "equal":
-                            result = transaction.run("match(t:Time) where t.year=$year and t.month=$month and t.day=day with distinct t.year as year,t.month as month,t.day as day,t.day_count as day_count_c return sum(day_count_c) as count order by count limit 200;",
+                            result = transaction.run("match(t:Time) where t.year=$year and t.month=$month and t.day=$day with distinct t.year as year,t.month as month,t.day as day,t.day_count as day_count_c return sum(day_count_c) as count order by count limit 200;",
                                     parameters("year", Integer.valueOf(year), "month", Integer.valueOf(month), "day", Integer.valueOf(day)));
                             break;
                         case "greater":

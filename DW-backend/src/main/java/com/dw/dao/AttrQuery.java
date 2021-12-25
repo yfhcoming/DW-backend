@@ -147,6 +147,28 @@ public class AttrQuery implements AutoCloseable{
         }
     }
 
+    public List<Record> queryByAllAttr(final String title,
+                                       final String director,
+                                       final String actor
+                                       ){
+        try(Session session = driver.session()){
+            List<Record> ans = session.readTransaction(new TransactionWork<List<Record>>() {
+                @Override
+                public List<Record> execute(Transaction transaction) {
+                    Result result = transaction.run("match (d:Director)-[]-(m:Movie)-[]-(a:Actor) where m.title=$title and d.director=$director and a.actor=$actor return " +
+                                    "m.product_id as product_id, m.score as score, m.emotion_score as emotion_score, " +
+                                    "m.title as title limit 200;",
+                            parameters("title", title,"director",director,"actor",actor));
+                    System.out.println(result);
+                    List<Record> resultList = result.list();
+                    System.out.println(resultList);
+                    return resultList;
+                }
+            });
+            return ans;
+        }
+    }
+
 //    public HashMap<String, Object> getReviewListByMovie(@RequestParam String title){
 //        try(Session session = driver.session()){
 //            List<Record> ans = session.readTransaction(new TransactionWork<List<Record>>() {

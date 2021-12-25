@@ -1,6 +1,7 @@
 package com.dw.dao.mysql;
 
 import com.dw.model.mysql.Movie;
+import com.dw.model.mysql.ResultVo;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -38,4 +39,5 @@ public interface MovieRepository extends CrudRepository<Movie, Long> {
 
     @Query("select se.product_id from Movie se where se.title=:tit")
     String getIdByTitle(@Param("tit") String tit);
+
 }
