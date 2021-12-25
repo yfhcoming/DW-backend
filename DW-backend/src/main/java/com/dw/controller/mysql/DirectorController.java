@@ -27,12 +27,13 @@ public class DirectorController {
         for(Object item : list){
             HashMap<String, String> temp1 = new HashMap<>();
             Object[] cells = (Object[]) item;
-            temp1.put("title", String.valueOf(cells[0]));
-            temp1.put("director", String.valueOf(cells[1]));
-            temp1.put("actor", String.valueOf(cells[2]));
-            temp1.put("score", String.valueOf(cells[3]));
-            temp1.put("emotion_score", String.valueOf(cells[4]));
-            temp1.put("label", String.valueOf(cells[5]));
+            temp1.put("product_id", String.valueOf(cells[0]));
+            temp1.put("title", String.valueOf(cells[1]));
+            temp1.put("director", String.valueOf(cells[2]));
+            temp1.put("actor", String.valueOf(cells[3]));
+            temp1.put("score", String.valueOf(cells[4]));
+            temp1.put("emotion_score", String.valueOf(cells[5]));
+            temp1.put("label", String.valueOf(cells[6]));
             result.add(temp1);
         }
         return new ResultVo(result,directorService.gettime());
