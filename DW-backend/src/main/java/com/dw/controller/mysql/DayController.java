@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @CrossOrigin
@@ -25,7 +26,7 @@ public class DayController {
         int year = Integer.parseInt(ymd[0]);
         int month = Integer.parseInt(ymd[1]);
         int day = Integer.parseInt(ymd[2]);
-        int season = month / 4 + 1;
+        int season = (month-1) / 4 + 1;
         switch (type) {
             case "year": {
                 result = dayService.yearCount(year, than);
@@ -48,6 +49,13 @@ public class DayController {
                 break;
             }
         }
-        return new ResultVo(result,resulttime);
+        List<Integer> list =result;
+        List<HashMap<String, String>> resultfinal = new ArrayList<>();
+        for(Integer item : list){
+            HashMap<String, String> temp1 = new HashMap<>();
+            temp1.put("count",item.toString());
+            resultfinal.add(temp1);
+        }
+        return new ResultVo(resultfinal,resulttime);
     }
 }

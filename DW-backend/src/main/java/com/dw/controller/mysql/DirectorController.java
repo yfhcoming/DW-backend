@@ -21,8 +21,8 @@ public class DirectorController {
     DirectorService directorService;
     //查询这个导演的电影列表
     @GetMapping("/find/director/movie")
-    public ResultVo finddirectormovie(String directorName) {
-        List<Object> list =directorService.getdirectormovie(directorName);
+    public ResultVo finddirectormovie(String directorName,double begin,double end) {
+        List<Object> list =directorService.getdirectormovie(directorName,begin,end);
         List<HashMap<String, String>> result = new ArrayList<>();
         for(Object item : list){
             HashMap<String, String> temp1 = new HashMap<>();

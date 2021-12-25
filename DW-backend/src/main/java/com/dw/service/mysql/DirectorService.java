@@ -14,9 +14,9 @@ public class DirectorService {
     private long timeone=0;
     private long timetwo=0;
 
-    public List getdirectormovie(String directorName){
+    public List getdirectormovie(String directorName,double begin,double end){
         long startTime = System.currentTimeMillis();    //获取开始时间
-        List list=directorRepository.getdirectormovie(directorName);
+        List list=directorRepository.getdirectormovie(directorName,begin,end);
         long endTime = System.currentTimeMillis();    //获取结束时间
         this.time = endTime - startTime;
         return list;

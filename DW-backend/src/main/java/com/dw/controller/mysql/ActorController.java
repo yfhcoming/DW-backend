@@ -21,8 +21,8 @@ public class ActorController {
 
     //查询给定演员的电影列表
     @GetMapping("/find/actor/movie")
-    public ResultVo findactormovie(String actorName) {
-        List<Object> list =actorService.getactormovie(actorName);
+    public ResultVo findactormovie(String actorName,double begin,double end) {
+        List<Object> list =actorService.getactormovie(actorName,begin,end);
         List<HashMap<String, String>> result = new ArrayList<>();
         for(Object item : list){
             HashMap<String, String> temp1 = new HashMap<>();

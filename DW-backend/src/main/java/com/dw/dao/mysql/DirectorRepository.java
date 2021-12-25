@@ -10,13 +10,12 @@ import java.util.List;
 
 @Repository
 public interface DirectorRepository extends CrudRepository<Director, Long> {
-    @Query(value = "call find_director_movie(:directorName);", nativeQuery = true)
-    List getdirectormovie(@Param("directorName") String directorName);
+    @Query(value = "call find_director_movie(:directorName,:begin,:end);", nativeQuery = true)
+    List getdirectormovie(@Param("directorName") String directorName,@Param("begin") Double begin,@Param("end") Double end);
 
     @Query(value = "call find_actor_by_director(:directorName);", nativeQuery = true)
     List getdirectoractor(@Param("directorName") String directorName);
 
     @Query(value = "call find_director_by_director(:directorName);", nativeQuery = true)
     List getdirectordirector(@Param("directorName") String directorName);
-
 }

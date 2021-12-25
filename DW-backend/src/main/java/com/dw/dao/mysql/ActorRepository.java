@@ -11,8 +11,8 @@ import java.util.List;
 @Repository
 public interface ActorRepository extends CrudRepository<Actor, Long> {
 
-    @Query(value = "call find_actor_movie(:actorName);", nativeQuery = true)
-    List getactormovie(@Param("actorName") String actorName);
+    @Query(value = "call find_actor_movie(:actorName,:begin,:end);", nativeQuery = true)
+    List getactormovie(@Param("actorName") String actorName,@Param("begin") Double begin,@Param("end") Double end);
 
     @Query(value = "call find_actor_by_actor(:actorName);", nativeQuery = true)
     List getactor(@Param("actorName") String actorName);

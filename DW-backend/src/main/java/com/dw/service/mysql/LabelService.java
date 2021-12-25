@@ -13,9 +13,9 @@ public class LabelService {
     LabelRepository labelRepository;
     private long time=0;
 
-    public List getlabelmovie(String label){
+    public List getlabelmovie(String label,double begin,double end){
         long startTime = System.currentTimeMillis();    //获取开始时间
-        List list= labelRepository.getlabelmovie(label);
+        List list= labelRepository.getlabelmovie(label,begin,end);
         long endTime = System.currentTimeMillis();    //获取结束时间
         this.time = endTime - startTime;
         return list;
@@ -24,3 +24,4 @@ public class LabelService {
         return time;
     }
 }
+

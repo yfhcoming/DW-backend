@@ -10,7 +10,8 @@ import java.util.List;
 
 @Repository
 public interface LabelRepository extends CrudRepository<Label, Long> {
-    @Query(value = "call find_label_movie(:label);", nativeQuery = true)
-    List getlabelmovie(@Param("label") String label);
+    @Query(value = "call find_label_movie(:label,:begin,:end);", nativeQuery = true)
+    List getlabelmovie(@Param("label") String label,@Param("begin") Double begin,@Param("end") Double end);
+
 
 }

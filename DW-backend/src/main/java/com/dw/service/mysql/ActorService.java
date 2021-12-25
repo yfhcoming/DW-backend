@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 @Service
 public class ActorService {
     @Autowired
@@ -14,9 +13,9 @@ public class ActorService {
     private long timeone=0;
     private long timetwo=0;
 
-    public List getactormovie(String actorName) {
+    public List getactormovie(String actorName,double begin,double end) {
         long startTime = System.currentTimeMillis();    //获取开始时间
-        List list=actorRepository.getactormovie(actorName);
+        List list=actorRepository.getactormovie(actorName,begin,end);
         long endTime = System.currentTimeMillis();    //获取结束时间
         this.time = endTime - startTime;
         return list;

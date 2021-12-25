@@ -25,86 +25,86 @@ public class MovieService {
     private long timeten=0;
     private long timeele=0;
 
-    public List<Object> getmoviebytitle(String title) {
+    public List getmoviebytitle(String title,double begin,double end) {
         long startTime = System.currentTimeMillis();    //获取开始时间
-        List<Object> list=movieRepository.getmoviebytitle(title);
+        List list=movieRepository.getmoviebytitle(title,begin,end);
         long endTime = System.currentTimeMillis();    //获取结束时间
         this.time = endTime - startTime;
         return list;
     }
-    public List getmoviebyfour(String movie,String director,String actor,String label) {
+    public List getmoviebyfour(String movie,String director,String actor,String label,double begin,double end) {
         long startTime = System.currentTimeMillis();    //获取开始时间
-        List list=movieRepository.getmoviebyfour(movie,director,actor,label);
+        List list=movieRepository.getmoviebyfour(movie,director,actor,label,begin,end);
         long endTime = System.currentTimeMillis();    //获取结束时间
         this.timeone = endTime - startTime;
         return list;
     }
-    public List getmoviebytitledirector(String movie,String director) {
+    public List getmoviebytitledirector(String movie,String director,double begin,double end) {
         long startTime = System.currentTimeMillis();    //获取开始时间
-        List list=movieRepository.getmoviebytitledirector(movie,director);
+        List list=movieRepository.getmoviebytitledirector(movie,director,begin,end);
         long endTime = System.currentTimeMillis();    //获取结束时间
         this.timetwo = endTime - startTime;
         return list;
     }
-    public List getmoviebytitleactor(String movie,String actor) {
+    public List getmoviebytitleactor(String movie,String actor,double begin,double end) {
         long startTime = System.currentTimeMillis();    //获取开始时间
-        List list=movieRepository.getmoviebytitleactor(movie,actor);
+        List list=movieRepository.getmoviebytitleactor(movie,actor,begin,end);
         long endTime = System.currentTimeMillis();    //获取结束时间
         this.timethree = endTime - startTime;
         return list;
     }
-    public List getmoviebytitlelabel(String movie,String label) {
+    public List getmoviebytitlelabel(String movie,String label,double begin,double end) {
         long startTime = System.currentTimeMillis();    //获取开始时间
-        List list=movieRepository.getmoviebytitlelabel(movie,label);
+        List list=movieRepository.getmoviebytitlelabel(movie,label,begin,end);
         long endTime = System.currentTimeMillis();    //获取结束时间
         this.timefour = endTime - startTime;
         return list;
     }
-    public List getmoviebydirectoractor(String director,String actor) {
+    public List getmoviebydirectoractor(String director,String actor,double begin,double end) {
         long startTime = System.currentTimeMillis();    //获取开始时间
-        List list=movieRepository.getmoviebydirectoractor(director,actor);
+        List list=movieRepository.getmoviebydirectoractor(director,actor,begin,end);
         long endTime = System.currentTimeMillis();    //获取结束时间
         this.timefive = endTime - startTime;
         return list;
     }
-    public List getmoviebydirectorlabel(String director,String label) {
+    public List getmoviebydirectorlabel(String director,String label,double begin,double end) {
         long startTime = System.currentTimeMillis();    //获取开始时间
-        List list=movieRepository.getmoviebydirectorlabel(director,label);
+        List list=movieRepository.getmoviebydirectorlabel(director,label,begin,end);
         long endTime = System.currentTimeMillis();    //获取结束时间
         this.timesix = endTime - startTime;
         return list;
     }
-    public List getmoviebyactorlabel(String actor,String label) {
+    public List getmoviebyactorlabel(String actor,String label,double begin,double end) {
         long startTime = System.currentTimeMillis();    //获取开始时间
-        List list=movieRepository.getmoviebyactorlabel(actor,label);
+        List list=movieRepository.getmoviebyactorlabel(actor,label,begin,end);
         long endTime = System.currentTimeMillis();    //获取结束时间
         this.timeseven = endTime - startTime;
         return list;
     }
-    public List getmoviebynolabel(String movie,String director,String actor){
+    public List getmoviebynolabel(String movie,String director,String actor,double begin,double end){
         long startTime = System.currentTimeMillis();    //获取开始时间
-        List list=movieRepository.getmoviebynolabel(movie,director,actor);
+        List list=movieRepository.getmoviebynolabel(movie,director,actor,begin,end);
         long endTime = System.currentTimeMillis();    //获取结束时间
         this.timeeight = endTime - startTime;
         return list;
     }
-    public  List getmoviebynoactor(String movie,String director,String label) {
+    public  List getmoviebynoactor(String movie,String director,String label,double begin,double end) {
         long startTime = System.currentTimeMillis();    //获取开始时间
-        List list=movieRepository.getmoviebynoactor(movie,director,label);
+        List list=movieRepository.getmoviebynoactor(movie,director,label,begin,end);
         long endTime = System.currentTimeMillis();    //获取结束时间
         this.timenine = endTime - startTime;
         return list;
     }
-    public List getmoviebynodirector(String movie,String actor,String label) {
+    public List getmoviebynodirector(String movie,String actor,String label,double begin,double end) {
         long startTime = System.currentTimeMillis();    //获取开始时间
-        List list=movieRepository.getmoviebynodirector(movie,actor,label);
+        List list=movieRepository.getmoviebynodirector(movie,actor,label,begin,end);
         long endTime = System.currentTimeMillis();    //获取结束时间
         this.timeten = endTime - startTime;
         return list;
     }
-    public List getmoviebynotitle(String director,String actor,String label) {
+    public List getmoviebynotitle(String director,String actor,String label,double begin,double end) {
         long startTime = System.currentTimeMillis();    //获取开始时间
-        List list=movieRepository.getmoviebynotitle(director,actor,label);
+        List list=movieRepository.getmoviebynotitle(director,actor,label,begin,end);
         long endTime = System.currentTimeMillis();    //获取结束时间
         this.timeele = endTime - startTime;
         return list;
@@ -140,5 +140,9 @@ public class MovieService {
     }
     public long gettimeele(){
         return timeele;
+    }
+    public String getIdByTitle(String title){
+        String tit = movieRepository.getIdByTitle(title);
+        return tit;
     }
 }

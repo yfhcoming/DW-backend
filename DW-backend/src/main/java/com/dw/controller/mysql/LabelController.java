@@ -21,8 +21,8 @@ public class LabelController {
     @Autowired
     LabelService labelService;
     @GetMapping("/get/label/movie")
-    public ResultVo getlabelmovie(String label){
-        List<Object> list =labelService.getlabelmovie(label);
+    public ResultVo getlabelmovie(String label,double begin,double end){
+        List<Object> list =labelService.getlabelmovie(label,begin,end);
         List<HashMap<String, String>> result = new ArrayList<>();
         for(Object item : list){
             HashMap<String, String> temp1 = new HashMap<>();
