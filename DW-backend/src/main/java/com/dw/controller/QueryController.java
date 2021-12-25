@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/query", produces = {MediaType.APPLICATION_JSON_VALUE})
 public class QueryController {

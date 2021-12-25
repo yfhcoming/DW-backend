@@ -1,30 +1,30 @@
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/movie_star
-    username: root
-    password: 111111
+    url: jdbc:mysql://110.42.150.65:3306/movie_star
+    username: dw
+    password: dw
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 
-#    hive:
-#      url: jdbc:hive2://101.132.43.76:10000/movie
-#      driver-class-name: org.apache.hive.jdbc.HiveDriver
-#      type: com.alibaba.druid.pool.DruidDataSource
-#      user: root
-#      password: ZJ010821lmx
-#      initialSize: 1
-#      minIdle: 3
-#      maxActive: 202
-#      maxWait: 60000
-#      timeBetweenEvictionRunsMillis: 60000
-#      minEvictableIdleTimeMillis: 30000
-#      validationQuery: select 1
-#      testWhileIdle: true
-#      testOnBorrow: false
-#      testOnReturn: false
-#      poolPreparedStatements: true
-#      maxPoolPreparedStatementPerConnectionSize: 20
+  #    hive:
+  #      url: jdbc:hive2://101.132.43.76:10000/movie
+  #      driver-class-name: org.apache.hive.jdbc.HiveDriver
+  #      type: com.alibaba.druid.pool.DruidDataSource
+  #      user: root
+  #      password: ZJ010821lmx
+  #      initialSize: 1
+  #      minIdle: 3
+  #      maxActive: 202
+  #      maxWait: 60000
+  #      timeBetweenEvictionRunsMillis: 60000
+  #      minEvictableIdleTimeMillis: 30000
+  #      validationQuery: select 1
+  #      testWhileIdle: true
+  #      testOnBorrow: false
+  #      testOnReturn: false
+  #      poolPreparedStatements: true
+  #      maxPoolPreparedStatementPerConnectionSize: 20
   jpa:
     hibernate:
       ddl-auto: update
@@ -64,6 +64,5 @@ spring:
 
 server:
   port : 8089
-
 
 
