@@ -93,8 +93,9 @@ public class QueryService {
         System.out.println("111");
         switch (timeType){
             case "year":
+                dataList = Arrays.asList(timeData.split("-"));
                 startTime = System.currentTimeMillis();
-                recordList = timeQuery.queryTimeByYear(timeData, cmp);
+                recordList = timeQuery.queryTimeByYear(dataList.get(0), cmp);
                 break;
             case "season":
                 dataList = Arrays.asList(timeData.split("-"));

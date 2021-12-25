@@ -29,12 +29,13 @@ public class movieController {
         for(Object item : list){
             HashMap<String, String> temp1 = new HashMap<>();
             Object[] cells = (Object[]) item;
-            temp1.put("title", String.valueOf(cells[0]));
-            temp1.put("director", String.valueOf(cells[1]));
-            temp1.put("actor", String.valueOf(cells[2]));
-            temp1.put("score", String.valueOf(cells[3]));
-            temp1.put("emotion_score", String.valueOf(cells[4]));
-            temp1.put("label", String.valueOf(cells[5]));
+            temp1.put("product_id", String.valueOf(cells[0]));
+            temp1.put("title", String.valueOf(cells[1]));
+            temp1.put("director", String.valueOf(cells[2]));
+            temp1.put("actor", String.valueOf(cells[3]));
+            temp1.put("score", String.valueOf(cells[4]));
+            temp1.put("emotion_score", String.valueOf(cells[5]));
+            temp1.put("label", String.valueOf(cells[6]));
             result.add(temp1);
         }
         return new ResultVo(result,movieService.gettime());
@@ -47,12 +48,13 @@ public class movieController {
         for(Object item : list){
             HashMap<String, String> temp1 = new HashMap<>();
             Object[] cells = (Object[]) item;
-            temp1.put("title", String.valueOf(cells[0]));
-            temp1.put("director", String.valueOf(cells[1]));
-            temp1.put("actor", String.valueOf(cells[2]));
-            temp1.put("score", String.valueOf(cells[3]));
-            temp1.put("emotion_score", String.valueOf(cells[4]));
-            temp1.put("label", String.valueOf(cells[5]));
+            temp1.put("product_id", String.valueOf(cells[0]));
+            temp1.put("title", String.valueOf(cells[1]));
+            temp1.put("director", String.valueOf(cells[2]));
+            temp1.put("actor", String.valueOf(cells[3]));
+            temp1.put("score", String.valueOf(cells[4]));
+            temp1.put("emotion_score", String.valueOf(cells[5]));
+            temp1.put("label", String.valueOf(cells[6]));
             result.add(temp1);
         }
         return new ResultVo(result,movieService.gettimeone());
@@ -65,12 +67,13 @@ public class movieController {
         for(Object item : list){
             HashMap<String, String> temp1 = new HashMap<>();
             Object[] cells = (Object[]) item;
-            temp1.put("title", String.valueOf(cells[0]));
-            temp1.put("director", String.valueOf(cells[1]));
-            temp1.put("actor", String.valueOf(cells[2]));
-            temp1.put("score", String.valueOf(cells[3]));
-            temp1.put("emotion_score", String.valueOf(cells[4]));
-            temp1.put("label", String.valueOf(cells[5]));
+            temp1.put("product_id", String.valueOf(cells[0]));
+            temp1.put("title", String.valueOf(cells[1]));
+            temp1.put("director", String.valueOf(cells[2]));
+            temp1.put("actor", String.valueOf(cells[3]));
+            temp1.put("score", String.valueOf(cells[4]));
+            temp1.put("emotion_score", String.valueOf(cells[5]));
+            temp1.put("label", String.valueOf(cells[6]));
             result.add(temp1);
         }
         return new ResultVo(result,movieService.gettimetwo());
@@ -83,12 +86,13 @@ public class movieController {
         for(Object item : list){
             HashMap<String, String> temp1 = new HashMap<>();
             Object[] cells = (Object[]) item;
-            temp1.put("title", String.valueOf(cells[0]));
-            temp1.put("director", String.valueOf(cells[1]));
-            temp1.put("actor", String.valueOf(cells[2]));
-            temp1.put("score", String.valueOf(cells[3]));
-            temp1.put("emotion_score", String.valueOf(cells[4]));
-            temp1.put("label", String.valueOf(cells[5]));
+            temp1.put("product_id", String.valueOf(cells[0]));
+            temp1.put("title", String.valueOf(cells[1]));
+            temp1.put("director", String.valueOf(cells[2]));
+            temp1.put("actor", String.valueOf(cells[3]));
+            temp1.put("score", String.valueOf(cells[4]));
+            temp1.put("emotion_score", String.valueOf(cells[5]));
+            temp1.put("label", String.valueOf(cells[6]));
             result.add(temp1);
         }
         return new ResultVo(result,movieService.gettimethree());
@@ -101,12 +105,13 @@ public class movieController {
         for(Object item : list){
             HashMap<String, String> temp1 = new HashMap<>();
             Object[] cells = (Object[]) item;
-            temp1.put("title", String.valueOf(cells[0]));
-            temp1.put("director", String.valueOf(cells[1]));
-            temp1.put("actor", String.valueOf(cells[2]));
-            temp1.put("score", String.valueOf(cells[3]));
-            temp1.put("emotion_score", String.valueOf(cells[4]));
-            temp1.put("label", String.valueOf(cells[5]));
+            temp1.put("product_id", String.valueOf(cells[0]));
+            temp1.put("title", String.valueOf(cells[1]));
+            temp1.put("director", String.valueOf(cells[2]));
+            temp1.put("actor", String.valueOf(cells[3]));
+            temp1.put("score", String.valueOf(cells[4]));
+            temp1.put("emotion_score", String.valueOf(cells[5]));
+            temp1.put("label", String.valueOf(cells[6]));
             result.add(temp1);
         }
         return new ResultVo(result,movieService.gettimefour());
@@ -119,12 +124,13 @@ public class movieController {
         for(Object item : list){
             HashMap<String, String> temp1 = new HashMap<>();
             Object[] cells = (Object[]) item;
-            temp1.put("title", String.valueOf(cells[0]));
-            temp1.put("director", String.valueOf(cells[1]));
-            temp1.put("actor", String.valueOf(cells[2]));
-            temp1.put("score", String.valueOf(cells[3]));
-            temp1.put("emotion_score", String.valueOf(cells[4]));
-            temp1.put("label", String.valueOf(cells[5]));
+            temp1.put("product_id", String.valueOf(cells[0]));
+            temp1.put("title", String.valueOf(cells[1]));
+            temp1.put("director", String.valueOf(cells[2]));
+            temp1.put("actor", String.valueOf(cells[3]));
+            temp1.put("score", String.valueOf(cells[4]));
+            temp1.put("emotion_score", String.valueOf(cells[5]));
+            temp1.put("label", String.valueOf(cells[6]));
             result.add(temp1);
         }
         return new ResultVo(result,movieService.gettimefive());
@@ -137,12 +143,13 @@ public class movieController {
         for(Object item : list){
             HashMap<String, String> temp1 = new HashMap<>();
             Object[] cells = (Object[]) item;
-            temp1.put("title", String.valueOf(cells[0]));
-            temp1.put("director", String.valueOf(cells[1]));
-            temp1.put("actor", String.valueOf(cells[2]));
-            temp1.put("score", String.valueOf(cells[3]));
-            temp1.put("emotion_score", String.valueOf(cells[4]));
-            temp1.put("label", String.valueOf(cells[5]));
+            temp1.put("product_id", String.valueOf(cells[0]));
+            temp1.put("title", String.valueOf(cells[1]));
+            temp1.put("director", String.valueOf(cells[2]));
+            temp1.put("actor", String.valueOf(cells[3]));
+            temp1.put("score", String.valueOf(cells[4]));
+            temp1.put("emotion_score", String.valueOf(cells[5]));
+            temp1.put("label", String.valueOf(cells[6]));
             result.add(temp1);
         }
         return new ResultVo(result,movieService.gettimesix());
@@ -155,12 +162,13 @@ public class movieController {
         for(Object item : list){
             HashMap<String, String> temp1 = new HashMap<>();
             Object[] cells = (Object[]) item;
-            temp1.put("title", String.valueOf(cells[0]));
-            temp1.put("director", String.valueOf(cells[1]));
-            temp1.put("actor", String.valueOf(cells[2]));
-            temp1.put("score", String.valueOf(cells[3]));
-            temp1.put("emotion_score", String.valueOf(cells[4]));
-            temp1.put("label", String.valueOf(cells[5]));
+            temp1.put("product_id", String.valueOf(cells[0]));
+            temp1.put("title", String.valueOf(cells[1]));
+            temp1.put("director", String.valueOf(cells[2]));
+            temp1.put("actor", String.valueOf(cells[3]));
+            temp1.put("score", String.valueOf(cells[4]));
+            temp1.put("emotion_score", String.valueOf(cells[5]));
+            temp1.put("label", String.valueOf(cells[6]));
             result.add(temp1);
         }
         return new ResultVo(result,movieService.gettimeseven());
@@ -173,12 +181,13 @@ public class movieController {
         for(Object item : list){
             HashMap<String, String> temp1 = new HashMap<>();
             Object[] cells = (Object[]) item;
-            temp1.put("title", String.valueOf(cells[0]));
-            temp1.put("director", String.valueOf(cells[1]));
-            temp1.put("actor", String.valueOf(cells[2]));
-            temp1.put("score", String.valueOf(cells[3]));
-            temp1.put("emotion_score", String.valueOf(cells[4]));
-            temp1.put("label", String.valueOf(cells[5]));
+            temp1.put("product_id", String.valueOf(cells[0]));
+            temp1.put("title", String.valueOf(cells[1]));
+            temp1.put("director", String.valueOf(cells[2]));
+            temp1.put("actor", String.valueOf(cells[3]));
+            temp1.put("score", String.valueOf(cells[4]));
+            temp1.put("emotion_score", String.valueOf(cells[5]));
+            temp1.put("label", String.valueOf(cells[6]));
             result.add(temp1);
         }
         return new ResultVo(result,movieService.gettimeeight());
@@ -191,12 +200,13 @@ public class movieController {
         for(Object item : list){
             HashMap<String, String> temp1 = new HashMap<>();
             Object[] cells = (Object[]) item;
-            temp1.put("title", String.valueOf(cells[0]));
-            temp1.put("director", String.valueOf(cells[1]));
-            temp1.put("actor", String.valueOf(cells[2]));
-            temp1.put("score", String.valueOf(cells[3]));
-            temp1.put("emotion_score", String.valueOf(cells[4]));
-            temp1.put("label", String.valueOf(cells[5]));
+            temp1.put("product_id", String.valueOf(cells[0]));
+            temp1.put("title", String.valueOf(cells[1]));
+            temp1.put("director", String.valueOf(cells[2]));
+            temp1.put("actor", String.valueOf(cells[3]));
+            temp1.put("score", String.valueOf(cells[4]));
+            temp1.put("emotion_score", String.valueOf(cells[5]));
+            temp1.put("label", String.valueOf(cells[6]));
             result.add(temp1);
         }
         return new ResultVo(result,movieService.gettimenine());
@@ -209,12 +219,13 @@ public class movieController {
         for(Object item : list){
             HashMap<String, String> temp1 = new HashMap<>();
             Object[] cells = (Object[]) item;
-            temp1.put("title", String.valueOf(cells[0]));
-            temp1.put("director", String.valueOf(cells[1]));
-            temp1.put("actor", String.valueOf(cells[2]));
-            temp1.put("score", String.valueOf(cells[3]));
-            temp1.put("emotion_score", String.valueOf(cells[4]));
-            temp1.put("label", String.valueOf(cells[5]));
+            temp1.put("product_id", String.valueOf(cells[0]));
+            temp1.put("title", String.valueOf(cells[1]));
+            temp1.put("director", String.valueOf(cells[2]));
+            temp1.put("actor", String.valueOf(cells[3]));
+            temp1.put("score", String.valueOf(cells[4]));
+            temp1.put("emotion_score", String.valueOf(cells[5]));
+            temp1.put("label", String.valueOf(cells[6]));
             result.add(temp1);
         }
         return new ResultVo(result,movieService.gettimeten());
@@ -227,12 +238,13 @@ public class movieController {
         for(Object item : list){
             HashMap<String, String> temp1 = new HashMap<>();
             Object[] cells = (Object[]) item;
-            temp1.put("title", String.valueOf(cells[0]));
-            temp1.put("director", String.valueOf(cells[1]));
-            temp1.put("actor", String.valueOf(cells[2]));
-            temp1.put("score", String.valueOf(cells[3]));
-            temp1.put("emotion_score", String.valueOf(cells[4]));
-            temp1.put("label", String.valueOf(cells[5]));
+            temp1.put("product_id", String.valueOf(cells[0]));
+            temp1.put("title", String.valueOf(cells[1]));
+            temp1.put("director", String.valueOf(cells[2]));
+            temp1.put("actor", String.valueOf(cells[3]));
+            temp1.put("score", String.valueOf(cells[4]));
+            temp1.put("emotion_score", String.valueOf(cells[5]));
+            temp1.put("label", String.valueOf(cells[6]));
             result.add(temp1);
         }
         return new ResultVo(result,movieService.gettimeele());
