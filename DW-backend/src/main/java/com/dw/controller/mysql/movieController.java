@@ -238,11 +238,12 @@ public class movieController {
 
 
     //查询电影的数据血缘
-    @PostMapping("/find/movie/merge")
-    public ResultVo findMergedMovie(@RequestBody List<String> pids) {
+    @GetMapping("/find/movie/merge")
+    public ResultVo findMergedMovie(@RequestParam("s") String s) {
 
-        List<String> s = pids;
         System.out.println(s);
+        List<String> pids = Arrays.asList(s.split(","));
+
         List<MergeVo> mergedMovie = movieService.findMergedMovie(pids);
 
         List<HashMap<String, String>> result = new ArrayList<>();
